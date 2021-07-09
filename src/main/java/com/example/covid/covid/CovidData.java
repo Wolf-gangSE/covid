@@ -10,12 +10,15 @@ public class CovidData {
   private Integer refuses;
   private String datetime;
 
+  //Getters and Setters
+
    public Integer getUid() {
      return uid;
    }
    public void setUid(Integer uid) {
      this.uid = uid;
    }
+
 
    public String getUf() {
      return uf;
@@ -24,12 +27,14 @@ public class CovidData {
      this.uf = uf;
    }
 
+   
    public String getState() {
      return state;
    }
    public void setState(String state) {
      this.state = state;
    }
+
 
    public Integer getCases() {
     return cases;
@@ -38,12 +43,14 @@ public class CovidData {
     this.cases = cases;
   }
 
+
    public Integer getDeaths() {
      return deaths;
    }
    public void setDeaths(Integer deaths) {
      this.deaths = deaths;
    }
+
 
    public Integer getSuspects() {
      return suspects;
@@ -52,6 +59,7 @@ public class CovidData {
      this.suspects = suspects;
    }
 
+
    public Integer getRefuses() {
      return refuses;
    }
@@ -59,6 +67,7 @@ public class CovidData {
      this.refuses = refuses;
    }
 
+   
    public String getDatetime() {
 
      return datetime;

@@ -1,8 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +7,9 @@ pageEncoding="UTF-8"%>
   <title>Document</title>
 </head>
 <body>
-  
+  <form action=” ${pageContext.request.contextPath}/login.do” method=”post”>
+    Nome.: <input type=”text” name=estado />
+  <input type=”submit” value=”Enviar”/>
+  </form>
 </body>
 </html>
