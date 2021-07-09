@@ -41,16 +41,16 @@ public class CovidServlet extends HttpServlet {
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    String id = req.getParameter("uf");
-    String url = "https://covid19-brazil-api.vercel.app/api/report/v1/brazil/uf/" + id;
-    ResponseEntity<CovidData> data = restTemplate.getForEntity(url, CovidData.class);
+    String id = req.getParameter("country");
+    String url = "https://covid19-brazil-api.vercel.app/api/report/v1/" + id;
+    ResponseEntity<Input> data = restTemplate.getForEntity(url, Input.class);
     resp.addHeader("content-type", "text/html;charset=UTF-8");
-    resp.getWriter().write("<h1>" + data.getBody().getState() + " </h1>");
+    resp.getWriter().write("<h1>" + data.getBody().getCountry() + " </h1>");
     resp.getWriter().write("<p>Número de casos: " + data.getBody().getCases() +" </p>");
+    resp.getWriter().write("<p>Número de confimados: " + data.getBody().getConfirmed() +" </p>");
     resp.getWriter().write("<p>Número de mortes: " + data.getBody().getDeaths() +" </p>");
-    resp.getWriter().write("<p>Número de suspeitos: " + data.getBody().getSuspects() +" </p>");
-    resp.getWriter().write("<p>Número de descartados: " + data.getBody().getRefuses() +" </p>");
-    resp.getWriter().write("<p>Última atualização dos dados: " + data.getBody().getDatetime() +" </p>");
+    resp.getWriter().write("<p>Número de recuperados: " + data.getBody().getRecovered() +" </p>");
+    resp.getWriter().write("<p>Última atualização dos dados: " + data.getBody().getUpdated_at() +" </p>");
 
   }
 
